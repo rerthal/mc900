@@ -62,7 +62,6 @@ bool LICM::runOnLoop(Loop *loop, LPPassManager &LPM) {
   } while (changedOnLoop);
 
   for (int i = 0; i < loopInvariants.size(); i++) loopInvariants[i]->moveBefore(PreHeader->getTerminator());
-  errs() << "foram movidas " << loopInvariants.size() << " invariantes\n";
   return loopInvariants.size() > 0;
 }
 
